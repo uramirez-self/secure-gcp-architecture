@@ -239,6 +239,7 @@ resource "google_compute_security_policy" "waf_policy" {
 
 # Serverless NEG to connect the Load Balancer to the API Gateway
 resource "google_compute_region_network_endpoint_group" "api_gw_neg" {
+  provider              = google-beta
   name                  = "api-gw-neg"
   network_endpoint_type = "SERVERLESS"
   region                = var.region
